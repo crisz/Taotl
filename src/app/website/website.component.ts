@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-website',
+  // tslint:disable-next-line:component-selector
+  selector: 'website',
   templateUrl: './website.component.html',
   styleUrls: ['./website.component.scss']
 })
