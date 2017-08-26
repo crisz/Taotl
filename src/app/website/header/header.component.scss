@@ -1,14 +1,13 @@
-$headerColor: rgb(239, 103, 11);
-$triangleHeight: 50px;
+@import '../website.variables';
 .header {
   width: 100vw;
-  min-height: auto;
-  max-height: calc(100vh - 100px);
   overflow-x: hidden;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   .rect {
+    min-height: calc(#{$headerHeight} - #{$triangleHeight});
+    max-height: calc(100vh - #{$triangleHeight});
     overflow-y: hidden;
     background: $headerColor;
   }

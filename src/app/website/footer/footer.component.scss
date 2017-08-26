@@ -1,0 +1,30 @@
+@import '../website.variables';
+:host {
+  position: relative;
+  top: calc(0px - #{$triangleHeight} - #{$overlap});
+}
+.footer {
+  width: 100vw;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  .rect {
+    overflow-y: hidden;
+    background: $footerColor;
+    height: calc(#{$footerHeight} + #{$overlap});
+  }
+  .triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: $triangleHeight 0 0 100vw;
+    border-color: transparent transparent transparent $footerColor;
+  }
+}
+
+@media screen and (max-height: 300px) {
+  .rect {
+    background: blue;
+  }
+}
