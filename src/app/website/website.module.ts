@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { WebsiteComponent } from './website.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { TutorialComponent } from './tutorial/tutorial.component';
 
 @NgModule({
   imports: [
@@ -11,7 +13,9 @@ import { FooterComponent } from './footer/footer.component';
   declarations: [
     WebsiteComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    NavbarComponent,
+    TutorialComponent
   ],
   exports: [
     WebsiteComponent

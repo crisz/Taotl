@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import 'website.variables';
+h1.headline {
+  font-family: 'Lato', sans-serif;
+  font-size: 45px;
+  font-weight: 400;
+  color: white;
+  text-align: center;
+}
+
+.accent {
+  font-weight: 750;
+  color: $accentColor;
+}
+
+.center-left {
+  text-align: center;
+  display: block;
+  float: left;
+  position: relative;
+  width: 40vw;
+  left: 5vw;
+  margin: 30px;
+  margin-top: 17vh;
+}
+
+//call to action
+.call-to-action {
+  background-color: $accentColor;
+  padding: 15px 30px;
+  border: 0;
+  border-radius: 0.4em;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 23px;
+  font-weight: 400;
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+.call-to-action:hover {
+  opacity: 0.7;
+}
