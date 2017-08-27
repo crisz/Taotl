@@ -1,7 +1,7 @@
 @import '../website.variables';
 :host {
   position: relative;
-  top: calc(0px - #{$triangleHeight} - #{$overlap});
+  margin-top: calc(0px - #{$triangleHeight} - #{$overlap});
 }
 .footer {
   width: 100vw;

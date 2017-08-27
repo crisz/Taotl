@@ -7,8 +7,8 @@
   box-sizing: border-box;
   .rect {
     min-height: calc(#{$headerHeight} - #{$triangleHeight});
-    max-height: calc(100vh - #{$triangleHeight});
-    overflow-y: hidden;
+    max-height: auto;
+    overflow-x: hidden;
     background: $headerColor;
    }
   .triangle {

@@ -1,11 +1,14 @@
-<header>
+<header @slideUp>
   <navbar></navbar>
   <div class="center-left">
     <h1 class="headline">The first website dedicated to <span class="accent">Taotl</span> game</h1>
-    <button class="call-to-action">Learn in 60 seconds</button>
+    <button class="call-to-action" routerLink="tutorial">Learn in 60 seconds</button>
+  </div>
+  <div class="center-right">
+    <login></login>
   </div>
 </header>
-<footer>
+<footer @slideDown>
   <h1>
     Anche qua la capra campa
   </h1>

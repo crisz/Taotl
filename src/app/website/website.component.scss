@@ -24,6 +24,29 @@ h1.headline {
   margin-top: 17vh;
 }
 
+.center-right {
+  text-align: center;
+  display: block;
+  float: right;
+  position: relative;
+  width: 40vw;
+  right: 5vw;
+  margin: 30px;
+  margin-top: 17vh;
+}
+
+@media screen and (max-width: 728px) {
+  .center-left, .center-right {
+    float: left;
+    width: 90vw;
+    left: 0;
+    right: 0;
+    margin-left: 0;
+    margin-right: 0;
+    clear: both;
+  }
+}
+
 //call to action
 .call-to-action {
   background-color: $accentColor;
