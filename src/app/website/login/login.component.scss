@@ -1,4 +1,28 @@
-.login-box {
-  border: solid 1px white;
-  border-radius: 3px;
+@import '../website.variables';
+input, textarea {
+  font-size: 1.125em;
+  margin-bottom: 1.11111em;
+  border-bottom: 6px solid #d6d7d9;
+  border-radius: 0.4em;
+  background: #ebecec;
+  color: black;
+  font-weight: 300;
+  display: block;
+  padding: 15px;
+  width: 100%;
+  outline: 0;
+  border: 0;
+}
+
+input:focus, textarea:focus {
+  border-color: $accentColor;
+}
+.input-field {
+  border-bottom: 6px solid #d6d7d9;
+}
+
+h3 {
+  text-align: left;
+  padding: 3px;
+  line-height: 140%;
 }
