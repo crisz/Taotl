@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routing';
 import { AppComponent } from './app.component';
 import { WebsiteModule } from './website/website.module';
-
+import { CardsModule } from './cards/cards.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -15,7 +15,8 @@ import { WebsiteModule } from './website/website.module';
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(ROUTES),
-    WebsiteModule
+    WebsiteModule,
+    CardsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
