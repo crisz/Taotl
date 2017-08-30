@@ -8,12 +8,14 @@ import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TutorialComponent } from './tutorial/tutorial.component';
 import { LoginComponent } from './login/login.component';
+import { CardsModule } from 'app/cards/cards.module';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    CardsModule
   ],
   declarations: [
     WebsiteComponent,

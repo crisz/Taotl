@@ -15,8 +15,7 @@ import { CardsModule } from './cards/cards.module';
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(ROUTES),
-    WebsiteModule,
-    CardsModule
+    WebsiteModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,11 @@
-<div class="card card-black-god">
-  <div class="card-name card-name-pos card-name-pos-top">BLACK GOD</div>
-  <div class="card-name card-name-pos card-name-pos-bottom">BLACK GOD</div>
-  <img src="./black-god.svg" alt="Black god" class="img-black-god" />
+<div 
+  class="card {{cardClass}}"
+  [style.left]="getLeft()"
+  [style.top]="getTop()"
+  [style.transform]="getAngle()"
+  [style.zIndex]="index"
+  >
+  <div class="card-name card-name-pos card-name-pos-top">{{name | uppercase}}</div>
+  <div class="card-name card-name-pos card-name-pos-bottom">{{name | uppercase}}</div>
+  <img [src]="imageSource" [alt]="name" [class]="imageClass" />
 </div>
