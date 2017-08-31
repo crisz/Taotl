@@ -1,11 +1,25 @@
 <div 
+  *ngIf="!isPlain"
   class="card {{cardClass}}"
   [style.left]="getLeft()"
   [style.top]="getTop()"
   [style.transform]="getAngle()"
-  [style.zIndex]="index"
-  >
-  <div class="card-name card-name-pos card-name-pos-top">{{name | uppercase}}</div>
+  [style.zIndex]="index">
+  <div class="card-name card-name-pos card-name-pos-top" >{{name | uppercase}}</div>
   <div class="card-name card-name-pos card-name-pos-bottom">{{name | uppercase}}</div>
+  <img [src]="imageSource" [alt]="name" [class]="imageClass" />
+</div>
+
+<div 
+  *ngIf="isPlain"
+  class="card card-plain"
+  [style.left]="getLeft()"
+  [style.top]="getTop()"
+  [style.transform]="getAngle()"
+  [style.zIndex]="index">
+  <div *ngFor="let corner of corners" class="card-name card-name-pos card-name-pos-{{corner}}">
+    {{value | uppercase}} 
+    <img class="symbol-{{suit}}" [src]="imageSource" />
+  </div>
   <img [src]="imageSource" [alt]="name" [class]="imageClass" />
 </div>

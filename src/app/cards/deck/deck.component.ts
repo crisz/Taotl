@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class DeckComponent implements OnInit {
 
   @Input() cards = [];
-  allowedCards = ['red god', 'black god'];
+  allowedCards = ['red god', 'black god', 'ah'];
   constructor() { }
 
   ngOnInit() {

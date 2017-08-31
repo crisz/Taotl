@@ -8,14 +8,15 @@ import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TutorialComponent } from './tutorial/tutorial.component';
 import { LoginComponent } from './login/login.component';
-import { CardsModule } from 'app/cards/cards.module';
-
+import { CardsModule } from 'app/cards/cards.module'; // to be removed
+import { GameModule } from 'app/game/game.module';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    CardsModule
+    CardsModule,
+    GameModule
   ],
   declarations: [
     WebsiteComponent,

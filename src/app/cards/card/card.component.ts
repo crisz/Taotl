@@ -13,7 +13,16 @@ export class CardComponent implements OnInit {
   imageSource;
   imageClass;
   cardClass;
-
+  isPlain: boolean;
+  corners = ['top-left', 'top-right', 'bottom-left', 'bottom-right'];
+  suit;
+  value;
+  suits = {
+    h: 'hearts',
+    d: 'diamonds',
+    c: 'clubs',
+    s: 'spades'
+  }
   constructor(private sanitizer: DomSanitizer) {
   }
 
@@ -22,9 +31,20 @@ export class CardComponent implements OnInit {
       .toLowerCase()
       .split(' ')
       .join('-');
-    this.imageSource = `../../../assets/${dashedName}.svg`;
-    this.imageClass = `img-${dashedName}`;
-    this.cardClass = `card-${dashedName}`;
+    console.log(this.name.length);
+    if (this.name.length === 2) {
+      this.isPlain = true;
+      this.suit = this.suits[this.name[1]];
+      this.imageSource = `../../../assets/${this.suit}.png`;
+      this.imageClass = `img-${this.suit}`;
+      this.value = this.name[0];
+      console.log(this.suit, this.imageSource, this.value);
+    } else {
+      this.isPlain = false;
+      this.imageSource = `../../../assets/${dashedName}.png`;
+      this.imageClass = `img-${dashedName}`;
+      this.cardClass = `card-${dashedName}`;
+    }
   }
 
   getLeft() {
