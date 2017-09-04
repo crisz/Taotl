@@ -1,0 +1,17 @@
+.links-container>span.links-item>a {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: white;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.links-container {
+  float: right;
+  margin-right: 5vw;
+}
+span.links-item {
+  display: inline-block;
+  margin: 10px;
+}

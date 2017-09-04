@@ -5,11 +5,20 @@
     <button class="call-to-action" routerLink="tutorial">Learn in 60 seconds</button>
   </div>
   <div class="center-right">
-    <login></login>
+    <card name="red god" class="rotate-animation" style="margin-right: 20px"></card>
+    <card name="black god" class="rotate-animation"></card>
   </div>
 </header>
 <footer @slideDown>
   <h1>
-    Anche qua la capra campa
+    <open-links [links]="[
+    {
+      name: 'source code',
+      href: 'http://github.com'
+    }, 
+    {
+      name: 'other projects',
+      href: 'http://github.com'
+    }]"></open-links>
   </h1>
 </footer>

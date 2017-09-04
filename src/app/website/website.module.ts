@@ -5,11 +5,11 @@ import { RouterModule } from '@angular/router';
 import { WebsiteComponent } from './website.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { TutorialComponent } from './tutorial/tutorial.component';
 import { LoginComponent } from './login/login.component';
 import { CardsModule } from 'app/cards/cards.module'; // to be removed
 import { GameModule } from 'app/game/game.module';
+import { OpenLinksComponent } from './open-links/open-links.component';
 
 @NgModule({
   imports: [
@@ -22,9 +22,9 @@ import { GameModule } from 'app/game/game.module';
     WebsiteComponent,
     HeaderComponent,
     FooterComponent,
-    NavbarComponent,
     TutorialComponent,
-    LoginComponent
+    LoginComponent,
+    OpenLinksComponent
   ],
   exports: [
     WebsiteComponent

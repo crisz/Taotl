@@ -1,2 +1,9 @@
-<!-- <deck [cards]="['red god', 'black god', 'red god']"></deck> -->
-<game></game>
+<div class="tutorial-container">
+  <div class="left-sidebar"></div>
+  <div class="game-wrap">
+    <game></game>
+  </div>
+  <div class="score-box">
+    <input type="range" (change)="changed($event)" min="0" max="2" step="0.001" />
+  </div>
+</div>

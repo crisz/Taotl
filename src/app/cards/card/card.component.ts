@@ -8,8 +8,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class CardComponent implements OnInit {
   @Input() name = '';
-  @Input() index: number;
-  @Input() total: number;
+  @Input() index = 0;
+  @Input() total = 1;
   imageSource;
   imageClass;
   cardClass;
@@ -31,14 +31,12 @@ export class CardComponent implements OnInit {
       .toLowerCase()
       .split(' ')
       .join('-');
-    console.log(this.name.length);
     if (this.name.length === 2) {
       this.isPlain = true;
       this.suit = this.suits[this.name[1]];
       this.imageSource = `../../../assets/${this.suit}.png`;
       this.imageClass = `img-${this.suit}`;
       this.value = this.name[0];
-      console.log(this.suit, this.imageSource, this.value);
     } else {
       this.isPlain = false;
       this.imageSource = `../../../assets/${dashedName}.png`;
@@ -60,8 +58,8 @@ export class CardComponent implements OnInit {
 
   getAngle() {
     const angle = getArchAngle(this.index, this.total - 1);
+    if (!angle) return 0;
     const safeValue = this.sanitizer.bypassSecurityTrustStyle(`rotateZ(${angle}deg)`);
-    console.log(safeValue);
     return safeValue;
   }
 }
