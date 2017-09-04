@@ -44,6 +44,8 @@ game {
 $originalSize: 1022px;
 .game-wrap {
   transition: all 0.5s;
+  padding: 10px;
+  padding-left: 45px;
 }
 
 @media screen and (min-width: 1700px) {
