@@ -3,7 +3,10 @@
     <i class="material-icons md-48">help</i>
   </div>
   <div class="game-wrap">
-    <game></game>
+    <game>
+      <player
+        *ngFor="let p of players; let i = index" [id]="i" [name]="p" [total]="players.length"></player>
+    </game>
   </div>
   <div class="score-box">
     <input type="range" (change)="changed($event)" min="0" max="2" step="0.001" />

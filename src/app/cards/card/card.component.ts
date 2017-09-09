@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Injector } from "@angular/core";
 import { getArchHeightFromZero, getArchAngle } from '../../math';
 import { DomSanitizer } from '@angular/platform-browser';
 @Component({
@@ -26,10 +26,14 @@ export class CardComponent implements OnInit {
     t: 'totem'
   }
 
-  constructor(private sanitizer: DomSanitizer) {
+  protected sanitizer;
+  constructor(injector: Injector) {
+    this.sanitizer = injector.get(DomSanitizer);
+    // public sanitizer: DomSanitizer
   }
 
   ngOnInit() {
+    if (!this.name) this.name = 'hidden';
     const dashedName = this.name
       .toLowerCase()
       .split(' ')

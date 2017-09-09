@@ -8,10 +8,14 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class TutorialComponent implements OnInit {
   scale = this.sanitizer.bypassSecurityTrustStyle('transform: scale(1)');
+  players = ['you', 'pippo', 'pluto', 'paperino', 'topolino', 'foo', 'bar'];
+
   constructor(private sanitizer: DomSanitizer) { }
+
   changed($event) {
     this.scale = this.sanitizer.bypassSecurityTrustStyle('transform: scale(' + $event.target.value + ')');
   }
+
   ngOnInit() {
   }
 

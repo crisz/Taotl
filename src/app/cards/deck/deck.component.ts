@@ -15,6 +15,7 @@ export class DeckComponent implements OnInit {
   ngOnInit() {
     this.cards
       .forEach(card => {
+        if (!card) return;
         if (this.allowedCards.indexOf(card.toLowerCase()) === -1)
           throw new Error(card + ' is not a card');
       });
