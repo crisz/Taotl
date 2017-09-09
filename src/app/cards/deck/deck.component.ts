@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { getAllowedCards } from 'app/game/game.utility';
 
 @Component({
   selector: 'deck',
@@ -8,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class DeckComponent implements OnInit {
 
   @Input() cards = [];
-  allowedCards = ['red god', 'black god', 'ah'];
+  allowedCards = getAllowedCards();
   constructor() { }
 
   ngOnInit() {

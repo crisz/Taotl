@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { getAllowedCards } from 'app/game/game.utility';
 
 @Component({
   selector: 'game',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./game.component.scss']
 })
 export class GameComponent implements OnInit {
-  cards = ['red god', 'red god', 'black god', 'ah'];
+  cc = getAllowedCards();
+  cards;
   constructor() { }
 
   ngOnInit() {
+    this.cards = [];
+    for (let i = 0; i < 6; i++) {
+      this.cards.push(this.cc[Math.round(Math.random() * this.cc.length)])
+    }
   }
 
   addCard() {

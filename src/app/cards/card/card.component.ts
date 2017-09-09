@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { getArchHeightFromZero, getArchAngle } from '../../math';
 import { DomSanitizer } from '@angular/platform-browser';
 @Component({
@@ -13,6 +13,7 @@ export class CardComponent implements OnInit {
   imageSource;
   imageClass;
   cardClass;
+  isHidden: boolean;
   isPlain: boolean;
   corners = ['top-left', 'top-right', 'bottom-left', 'bottom-right'];
   suit;
@@ -21,8 +22,10 @@ export class CardComponent implements OnInit {
     h: 'hearts',
     d: 'diamonds',
     c: 'clubs',
-    s: 'spades'
+    s: 'spades',
+    t: 'totem'
   }
+
   constructor(private sanitizer: DomSanitizer) {
   }
 
@@ -36,12 +39,14 @@ export class CardComponent implements OnInit {
       this.suit = this.suits[this.name[1]];
       this.imageSource = `../../../assets/${this.suit}.png`;
       this.imageClass = `img-${this.suit}`;
-      this.value = this.name[0];
+      this.value = this.name[0] === '0' ? '10' : this.name[0];
     } else {
       this.isPlain = false;
+      this.cardClass = `card-${dashedName}`;
+      this.isHidden = false;
+      if (dashedName === 'hidden') return this.isHidden = true;
       this.imageSource = `../../../assets/${dashedName}.png`;
       this.imageClass = `img-${dashedName}`;
-      this.cardClass = `card-${dashedName}`;
     }
   }
 

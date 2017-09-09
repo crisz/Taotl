@@ -10,10 +10,23 @@
   text-align: center;
   box-sizing: border-box;
   display: inline-block;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  z-index: 1000 !important;
+  transform: translateZ(10px) !important;
+  cursor: pointer;
 }
 
 .card-plain {
   background-image: url('../../../assets/plain-bg.jpg');
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.card-hidden {
+  background-image: url('../../../assets/hidden-bg.jpg');
   background-size: cover;
   background-position: 50% 50%;
 }
@@ -28,6 +41,14 @@
   background-image: url('../../../assets/red-god-bg.jpg');
   background-size: cover;
   background-position: 50% 50%;
+}
+
+.card-suit {
+  font-family: 'Sedgwick Ave', cursive;
+  font-size: 27px !important;
+  font-weight: 500;
+  line-height: 120%;
+  color: #4E4444;
 }
 
 .img-black-god {
@@ -90,6 +111,23 @@
   color: #4E4444;
 }
 
+
+.img-ace-hearts {
+  position: absolute;
+  width: 62%;
+  height: auto;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 31%;
+}
+
+.card-name img.symbol-hearts {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
 .card-name-pos {
   position: absolute;
   margin: 0 auto;
@@ -102,8 +140,8 @@
     bottom: 15px;
   }
   &-top-left {
-    top: 15px;
-    left: 15px;
+    top: 7px;
+    left: 11px;
     right: auto;
   }
   &-top-right {
@@ -118,9 +156,9 @@
     transform: rotateZ(180deg);
   }
   &-bottom-right {
-    bottom: 15px;
+    bottom: 7px;
     left: auto;
-    right: 15px;
+    right: 11px;
     transform: rotateZ(180deg);
   }
 }
