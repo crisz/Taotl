@@ -23,16 +23,18 @@ export class PlayerComponent implements OnInit {
 
   ngOnInit() {
     this.cards = [];
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 4; i++) {
       this.cards.push(this.cc[Math.round(Math.random() * this.cc.length)])
     }
     const angle = 2 * Math.PI * this.id / this.total;
     const sin = Math.sin(angle);
     const cos = Math.cos(angle);
 
-    this.left = (sin + 1) * this.width / 2 - 500 + 'px';
-    this.top = (cos + 1) * this.height / 2 - 15 + 'px';
-    this.transform = this.sanitizer.bypassSecurityTrustStyle('rotateZ(' + - angle * 57.2958 + 'deg)');
+    this.left = '0';
+    this.top = '0';
+    // this.left = (sin + 1) * this.width / 2 - 500 + 'px';
+    // this.top = (cos + 1) * this.height / 2 - 15 + 'px';
+    // this.transform = this.sanitizer.bypassSecurityTrustStyle('rotateZ(' + - angle * 57.2958 + 'deg)');
   }
 
 }

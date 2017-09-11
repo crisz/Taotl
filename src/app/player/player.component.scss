@@ -1,3 +1,24 @@
 :host {
   position: absolute;
+  height: 100%;
+}
+
+$originalSize: 1020px / 0.7;
+$rate: 0.7;
+
+.deck-sizing {
+  position: absolute;
+  width: $originalSize;
+  margin: 0;
+  transform: translateX(($originalSize * ($rate - 1))/2) scale($rate);
+  bottom: -50px;
+}
+
+.hidden-deck-sizing {
+  $rate: 0.5;
+  position: absolute;
+  width: $originalSize;
+  margin: 0;
+  transform: translateX(($originalSize * ($rate - 1))/2) scale($rate);
+  bottom: -50px;
 }

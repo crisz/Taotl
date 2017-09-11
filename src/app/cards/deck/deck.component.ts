@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostBinding } from '@angular/core';
 import { getAllowedCards } from 'app/game/game.utility';
 
 @Component({
@@ -10,9 +10,11 @@ export class DeckComponent implements OnInit {
 
   @Input() cards = [];
   allowedCards = getAllowedCards();
-  constructor() { }
+  @HostBinding('style.text-indent') shift;
 
   ngOnInit() {
+    this.shift = (this.cards.length - 1) * 30 + 'px';
+    // Check if all the cards are allowed
     this.cards
       .forEach(card => {
         if (!card) return;
