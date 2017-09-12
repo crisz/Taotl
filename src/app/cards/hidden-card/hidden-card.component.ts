@@ -12,7 +12,6 @@ export class HiddenCardComponent extends CardComponent implements OnInit {
     super(injector)
   }
   getLeft() {
-    console.log(this.index, -60);
     return this.index * -60 + 'px';
   }
 

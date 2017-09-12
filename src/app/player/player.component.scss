@@ -3,22 +3,22 @@
   height: 100%;
 }
 
-$originalSize: 1020px / 0.7;
-$rate: 0.7;
-
 .deck-sizing {
+  $rate: 0.7;
+  $originalWidth: 1020px / $rate;
   position: absolute;
-  width: $originalSize;
+  width: $originalWidth;
   margin: 0;
-  transform: translateX(($originalSize * ($rate - 1))/2) scale($rate);
+  transform: translateX(($originalWidth * ($rate - 1))/2) scale($rate);
   bottom: -50px;
 }
 
 .hidden-deck-sizing {
   $rate: 0.5;
+  $originalWidth: 1020px / $rate;
+  $originalHeight: 150px / $rate;
   position: absolute;
-  width: $originalSize;
+  width: $originalWidth;
   margin: 0;
-  transform: translateX(($originalSize * ($rate - 1))/2) scale($rate);
-  bottom: -50px;
+  transform: translateX(($originalWidth * ($rate - 1))/2) translateY(($originalHeight * ($rate - 1))/2) scale($rate);
 }

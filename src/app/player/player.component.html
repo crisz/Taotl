@@ -1,14 +1,16 @@
-<div>
-  <deck 
-    [cards]="cards" 
-    *ngIf="!id && id"
-    class="deck-sizing">
-  </deck>
-  <hidden-deck 
-    [cards]="[0, 0, 0, 0, 0]" 
-    *ngIf="id"
-    class="hidden-deck-sizing">
-</hidden-deck>
-</div>
-
-<div style="position: absolute; width: 510px; height: 500px; background: blue; left: 0; margin: 0; opacity: 0.6"></div>
+<deck 
+  [cards]="cards" 
+  *ngIf="!id && id"
+  class="deck-sizing">
+</deck>
+<!-- <hidden-deck 
+  [cards]="[0, 0, 0, 0, 0]" 
+  *ngIf="id"
+  class="hidden-deck-sizing">
+</hidden-deck> -->
+<hidden-deck 
+  [total]="cards.length"
+  *ngIf="id"
+  class="hidden-deck-sizing"
+  [position]="getPosition()">
+</hidden-deck> 
