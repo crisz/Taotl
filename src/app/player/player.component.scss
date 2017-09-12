@@ -20,5 +20,6 @@
   position: absolute;
   width: $originalWidth;
   margin: 0;
-  transform: translateX(($originalWidth * ($rate - 1))/2) translateY(($originalHeight * ($rate - 1))/2) scale($rate);
+  transform: translateX(($originalWidth * ($rate - 1))/2) scale($rate);
+  bottom: -50px;
 }

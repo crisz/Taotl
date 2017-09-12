@@ -42,7 +42,7 @@ export class PlayerComponent implements OnInit {
     return {
       top,
       left,
-      rotate: '45deg'
+      rotate
     }
   }
 

@@ -19,7 +19,7 @@ export class HiddenDeckComponent extends DeckComponent implements OnInit {
     super();
   }
   ngOnInit() {
-    this.shift = (this.total - 1) * 50 + 'px';
+    this.shift = (this.total - 1) * 60 + 'px';
     for (let i = 0; i < this.total; i++) {
       this.cards.push('hidden');
     }
@@ -29,6 +29,6 @@ export class HiddenDeckComponent extends DeckComponent implements OnInit {
   setPosition() {
     // this.top = this.position.top;
     // this.left = this.position.left - 1020 / 2 + 'px';
-    this.transform = this.sanitizer.bypassSecurityTrustStyle('transform: rotateZ(10deg)');
+    this.transform = this.sanitizer.bypassSecurityTrustStyle('transform: rotateZ(' + this.position.rotate + ')');
   }
 }
