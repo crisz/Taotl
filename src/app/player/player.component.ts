@@ -15,7 +15,7 @@ export class PlayerComponent implements OnInit {
   width = 1457; // todo: refactoring
   height = 650; // todo: refactoring;
   cards;
-  numberOfCards = 5;
+  numberOfCards = 7;
   cc = getAllowedCards();
   constructor(private sanitizer: DomSanitizer) {}
 
@@ -34,11 +34,6 @@ export class PlayerComponent implements OnInit {
     const top = (cos + 1) * this.height * 0.7 / 2 + 'px';
     const left = (sin + 1) * this.width * 0.7 / 2;
     const rotate =  - angle * 57.2958 + 'deg';
-    console.log('player ', this.id, {
-      top,
-      left,
-      rotate
-    });
     return {
       top,
       left,

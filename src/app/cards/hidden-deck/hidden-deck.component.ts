@@ -13,7 +13,7 @@ export class HiddenDeckComponent extends DeckComponent implements OnInit {
   @HostBinding('style.text-indent') shift;
   @HostBinding('style.top') top;
   @HostBinding('style.left') left;
-  transform;
+  style;
   cards = [];
   constructor(private sanitizer: DomSanitizer) {
     super();
@@ -24,11 +24,16 @@ export class HiddenDeckComponent extends DeckComponent implements OnInit {
       this.cards.push('hidden');
     }
     this.setPosition();
+
   }
 
   setPosition() {
     // this.top = this.position.top;
     // this.left = this.position.left - 1020 / 2 + 'px';
-    this.transform = this.sanitizer.bypassSecurityTrustStyle('transform: rotateZ(' + this.position.rotate + ')');
+    const transform = 'transform: rotateZ(' + this.position.rotate + ')';
+    const originLeft = 30.5 + 40.5 * this.total;
+    console.log(originLeft)
+    const transformOrigin = 'transform-origin: ' + originLeft + 'px 50%'
+    this.style = this.sanitizer.bypassSecurityTrustStyle([transform, transformOrigin].join(';'));
   }
 }
