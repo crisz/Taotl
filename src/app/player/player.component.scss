@@ -11,14 +11,16 @@
   margin: 0;
   transform: translateX(($originalWidth * ($rate - 1))/2) scale($rate);
   bottom: -50px;
+  z-index: 15;
 }
 
 .hidden-deck-sizing {
   $rate: 0.5;
   $originalWidth: 1020px / $rate;
-  $originalHeight: 150px / $rate;
+  $originalHeight: 300px / $rate;
   position: absolute;
   width: $originalWidth;
   margin: 0;
   transform: translateX(($originalWidth * ($rate - 1))/2) translateY(($originalHeight * ($rate - 1))/2) scale($rate);
+  z-index: 10;
 }

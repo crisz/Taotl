@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'game',
@@ -6,17 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./game.component.scss']
 })
 export class GameComponent implements OnInit {
+  @Input() players = [];
 
-  cards;
   constructor() { }
 
   ngOnInit() {
 
-  }
-
-  addCard() {
-    this.cards.push('black god');
-    console.log(this.cards);
   }
 
 }

@@ -3,9 +3,7 @@
     <i class="material-icons md-48">help</i>
   </div>
   <div class="game-wrap">
-    <game>
-      <player
-        *ngFor="let p of players; let i = index" [id]="i" [name]="p" [total]="players.length"></player>
+    <game [players]="players">
     </game>
   </div>
   <div class="score-box">

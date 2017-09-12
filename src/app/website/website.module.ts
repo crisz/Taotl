@@ -9,7 +9,6 @@ import { TutorialComponent } from './tutorial/tutorial.component';
 import { LoginComponent } from './login/login.component';
 import { CardsModule } from 'app/cards/cards.module'; // to be removed
 import { OpenLinksComponent } from './open-links/open-links.component';
-import { PlayerModule } from 'app/player/player.module';
 import { GameModule } from 'app/game/game.module';
 
 @NgModule({
@@ -17,7 +16,6 @@ import { GameModule } from 'app/game/game.module';
     CommonModule,
     RouterModule,
     CardsModule,
-    PlayerModule,
     GameModule
   ],
   declarations: [

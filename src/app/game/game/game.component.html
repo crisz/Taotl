@@ -1,7 +1,8 @@
 <oval style="position: relative">
-  <ng-content></ng-content>
-  <!-- <deck 
-    [cards]="cards" 
-    style="transform: scale(0.7); position: absolute; bottom: -50px; margin: 0 auto; left: 0; right: 0 ">
-  </deck> -->
+  <player
+    *ngFor="let p of players; let i = index" 
+    [id]="i" 
+    [name]="p" 
+    [total]="players.length">
+  </player>
 </oval>
