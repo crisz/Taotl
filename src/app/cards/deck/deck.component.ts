@@ -11,6 +11,7 @@ export class DeckComponent implements OnInit {
   @Input() cards = [];
   allowedCards = getAllowedCards();
   @HostBinding('style.text-indent') shift;
+  @HostBinding('style.width') width;
   ngOnInit() {
     // Fix the "transform: scale(..)" superflous sapce
     this.shift = (this.cards.length - 1) * 30 + 'px';
@@ -22,10 +23,6 @@ export class DeckComponent implements OnInit {
           throw new Error(card + ' is not a card');
       });
 
-    this.setPosition();
-  }
-
-  setPosition() {
-
+    console.log(this.width);
   }
 }
