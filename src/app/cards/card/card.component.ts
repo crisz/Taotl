@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Injector, HostBinding } from "@angular/core";
+import { Component, OnInit, Input, Injector, HostBinding } from '@angular/core';
 import { getArchHeightFromZero, getArchAngle } from '../../math';
 import { DomSanitizer } from '@angular/platform-browser';
 @Component({
@@ -56,7 +56,8 @@ export class CardComponent implements OnInit {
   }
   playCard() {
     this.isPlayed = true;
-    console.log('You played the card ' + this.name);
+    this.index = 0;
+    this.total = 1;
   }
   getLeft() {
     return this.index * -30 + 'px';
@@ -70,9 +71,9 @@ export class CardComponent implements OnInit {
   }
 
   getAngle() {
+    if (this.total === 1) return this.sanitizer.bypassSecurityTrustStyle(`rotateZ(0deg)`);
     const angle = getArchAngle(this.index, this.total - 1);
     if (!angle) return 0;
-    const safeValue = this.sanitizer.bypassSecurityTrustStyle(`rotateZ(${angle}deg)`);
-    return safeValue;
+    return this.sanitizer.bypassSecurityTrustStyle(`rotateZ(${angle}deg)`);
   }
 }
