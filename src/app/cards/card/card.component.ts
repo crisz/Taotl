@@ -1,4 +1,11 @@
-import { Component, OnInit, Input, Injector } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  HostBinding,
+  Input,
+  Injector,
+  ChangeDetectorRef
+} from '@angular/core';
 import { getArchHeightFromZero, getArchAngle } from '../../math';
 import { DomSanitizer } from '@angular/platform-browser';
 @Component({
@@ -7,6 +14,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
+  @Input() properties;
   @Input() name = '';
   @Input() index = 0;
   @Input() total = 1;
@@ -18,6 +26,7 @@ export class CardComponent implements OnInit {
   corners = ['top-left', 'top-right', 'bottom-left', 'bottom-right'];
   suit;
   value;
+  @HostBinding('class.played-card') isPlayed = false;
   suits = {
     h: 'hearts',
     d: 'diamonds',
@@ -25,11 +34,11 @@ export class CardComponent implements OnInit {
     s: 'spades',
     t: 'totem'
   }
-
+  cd: ChangeDetectorRef;
   protected sanitizer;
   constructor(injector: Injector) {
     this.sanitizer = injector.get(DomSanitizer);
-    // public sanitizer: DomSanitizer
+    this.cd = injector.get(ChangeDetectorRef);
   }
 
   ngOnInit() {
@@ -54,6 +63,15 @@ export class CardComponent implements OnInit {
     }
   }
 
+  playCard() {
+    if (this.index !== 2) return;
+    this.properties.index = 0;
+    this.properties.total = 1;
+    this.isPlayed = true;
+    console.log(this.properties.index);
+    window.setTimeout(() => console.log('#######' + this.properties.index, this.angle), 1000);
+  }
+
   getLeft() {
     return this.index * -30 + 'px';
   }
@@ -65,8 +83,11 @@ export class CardComponent implements OnInit {
     return height + 'px';
   }
 
-  getAngle() {
-    const angle = getArchAngle(this.index, this.total - 1);
+  get angle() {
+    if (!this.properties) return;
+    if (this.properties.total === 1) return this.sanitizer.bypassSecurityTrustStyle(`rotateZ(0deg)`)
+    const angle = getArchAngle(this.properties.index, this.properties.total - 1);
+    console.log('angle', this.properties.index, angle)
     if (!angle) return 0;
     const safeValue = this.sanitizer.bypassSecurityTrustStyle(`rotateZ(${angle}deg)`);
     return safeValue;

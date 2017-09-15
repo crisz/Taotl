@@ -1,4 +1,11 @@
-import { Component, OnInit, Input, HostBinding } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  HostBinding,
+  OnChanges,
+  DoCheck
+} from '@angular/core';
 import { getAllowedCards } from 'app/game/game.utility';
 
 @Component({
@@ -6,12 +13,11 @@ import { getAllowedCards } from 'app/game/game.utility';
   templateUrl: './deck.component.html',
   styleUrls: ['./deck.component.scss']
 })
-export class DeckComponent implements OnInit {
+export class DeckComponent implements OnInit, OnChanges, DoCheck {
 
   @Input() cards = [];
   allowedCards = getAllowedCards();
   @HostBinding('style.text-indent') shift;
-  @HostBinding('style.width') width;
   ngOnInit() {
     // Fix the "transform: scale(..)" superflous sapce
     this.shift = (this.cards.length - 1) * 30 + 'px';
@@ -22,7 +28,13 @@ export class DeckComponent implements OnInit {
         if (this.allowedCards.indexOf(card.toLowerCase()) === -1)
           throw new Error(card + ' is not a card');
       });
+  }
 
-    console.log(this.width);
+  ngOnChanges() {
+    console.log('deck changed!');
+  }
+
+  ngDoCheck() {
+    console.log('changeDetection arrived in the deck');
   }
 }
