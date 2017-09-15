@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Injector } from "@angular/core";
+import { Component, OnInit, Input, Injector, HostBinding } from "@angular/core";
 import { getArchHeightFromZero, getArchAngle } from '../../math';
 import { DomSanitizer } from '@angular/platform-browser';
 @Component({
@@ -24,7 +24,8 @@ export class CardComponent implements OnInit {
     c: 'clubs',
     s: 'spades',
     t: 'totem'
-  }
+  };
+  @HostBinding('class.played-card') isPlayed = false;
 
   protected sanitizer;
   constructor(injector: Injector) {
@@ -53,7 +54,10 @@ export class CardComponent implements OnInit {
       this.imageClass = `img-${dashedName}`;
     }
   }
-
+  playCard() {
+    this.isPlayed = true;
+    console.log('You played the card ' + this.name);
+  }
   getLeft() {
     return this.index * -30 + 'px';
   }

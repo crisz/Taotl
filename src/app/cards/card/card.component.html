@@ -4,7 +4,8 @@
   [style.left]="getLeft()"
   [style.top]="getTop()"
   [style.transform]="getAngle()"
-  [style.zIndex]="index">
+  [style.zIndex]="index"
+  (click)="playCard()">
   <span class="card-content" *ngIf="!isHidden">
     <div class="card-name card-name-pos card-name-pos-top" >{{name | uppercase}}</div>
     <div class="card-name card-name-pos card-name-pos-bottom">{{name | uppercase}}</div>
@@ -18,7 +19,8 @@
   [style.left]="getLeft()"
   [style.top]="getTop()"
   [style.transform]="getAngle()"
-  [style.zIndex]="index">
+  [style.zIndex]="index"
+  (click)="playCard()">
   <div class="card-name card-name-pos card-name-pos-top-left card-suit">
     {{value | uppercase}}
     <img class="symbol-hearts" [src]="imageSource" />
